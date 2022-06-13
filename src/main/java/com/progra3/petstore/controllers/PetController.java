@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
@@ -39,7 +41,7 @@ public class PetController {
 
 	@ResponseStatus(code = HttpStatus.CREATED)
 	@PostMapping
-	public void createPet( @RequestBody Pet pet) {
+	public void createPet( @Valid @RequestBody Pet pet) {
 		
 	service.createPet(pet); }
 
